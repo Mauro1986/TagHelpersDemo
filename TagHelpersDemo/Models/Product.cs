@@ -16,7 +16,6 @@ namespace TagHelpersDemo.Models
         public int Quantity { get; set; }
 
         [Column(TypeName= "decimal(8,2)")]
-        [DisplayFormat(DataFormatString = "{0:c2}", ApplyFormatInEditMode = true)]
         public decimal Cost { get; set; }
         public decimal? BillAmount { get; set; }
         public decimal? Discount { get; set; }

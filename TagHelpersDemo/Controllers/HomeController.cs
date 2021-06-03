@@ -12,7 +12,7 @@ namespace TagHelpersDemo.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+        Category category = new Category();
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -21,7 +21,7 @@ namespace TagHelpersDemo.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-
+            ViewBag.Categorys = category.Categorys;
             return View();
         }
         [HttpPost]

@@ -38,8 +38,8 @@
                 <span asp-validation-for="Cost" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="BillAmount" class="control-label" ></label>
-                <input asp-for="BillAmount" class="form-control" readonly value="@ViewBag.BillAmount"/>
+                <label asp-for="BillAmount" class="control-label"></label>
+                <input asp-for="BillAmount" class="form-control" readonly value="@ViewBag.BillAmount" />
                 <span asp-validation-for="BillAmount" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -49,7 +49,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="NetBillAmount" class="control-label"></label>
-                <input asp-for="NetBillAmount" class="form-control" readonly value="@ViewBag.NetBillAmount"/>
+                <input asp-for="NetBillAmount" class="form-control" readonly value="@ViewBag.NetBillAmount" />
                 <span asp-validation-for="NetBillAmount" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
@@ -64,22 +64,37 @@
                     <span asp-validation-for="CategoryID" class="text-danger"></span>
         </div>*@
             @*This is drop down   *@
+            @*<div class="form-group">
+            <label asp-for="CategoryID" class="control-label"></label>
+            <select asp-for="CategoryID" class="form-control">
+                <option value="1">Fashion</option>
+                <option value="2">Elektronics</option>
+                <option value="3">Computers</option>
+                <option value="4">Sports</option>
+            </select>
+            <span asp-validation-for="CategoryID" class="text-danger"></span>
+
+        </div>*@
+            @*This is binding drop down from database(simulatie)  *@
             <div class="form-group">
                 <label asp-for="CategoryID" class="control-label"></label>
-                <select asp-for="CategoryID" class="form-control">
-                    <option value="1">Fashion</option>
-                    <option value="2">Elektronics</option>
-                    <option value="3">Computers</option>
-                    <option value="4">Sports</option>
+                <select asp-for="CategoryID" class="form-control" asp-items="@ViewBag.Categorys">
+                    @* maakt dropdown zelf *@
                 </select>
                 <span asp-validation-for="CategoryID" class="text-danger"></span>
 
             </div>
 
             <div class="form-group">
-                <label asp-for="PaymentType" class="control-label"></label>
-                <input asp-for="PaymentType" class="form-control" />
-                <span asp-validation-for="PaymentType" class="text-danger"></span>
+                <label asp-for="PaymentType" class="control-label w-25">
+                    <input type="radio" asp-for="PaymentType" value="Credit Card" class="form-control w-25" />Credit Card
+                </label>
+                <label asp-for="PaymentType" class="control-label w-25">
+                    <input type="radio" asp-for="PaymentType" value="PayPal" class="form-control w-25" />PayPal
+                </label>
+                <label asp-for="PaymentType" class="control-label w-25">
+                    <input type="radio" asp-for="PaymentType" value="Cash" class="form-control w-25" />Cash
+                </label>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
